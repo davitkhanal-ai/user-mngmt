@@ -14,7 +14,6 @@ const schema = new mongoose.Schema(
         number : {
             type: Number,
             required: true,
-            unique: true
         },
         gender : String,
         status : String
