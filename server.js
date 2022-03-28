@@ -25,7 +25,7 @@ app.use('/js', express.static(path.resolve(__dirname,"assets/js")))
 
 //getting and listening
 app.get('/', (req,res)=>{
-    res.send("Crud Application")
+    res.render('index');
 })
 
 app.listen(PORT, ()=>{
