@@ -40,6 +40,17 @@ app.use('/js', express.static(path.resolve(__dirname,"assets/js")))
 //loading router
 app.use('/',require("./server/routes/router"))
 
+app.get('/user/:id', checkUserAuth, findApp, renderView, sendJSON);
+function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
+
+function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
+
 app.listen(PORT, ()=>{
     console.log(`server has started in ${PORT}`)
 })
