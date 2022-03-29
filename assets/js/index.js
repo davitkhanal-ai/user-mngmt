@@ -15,7 +15,7 @@ $("#update_user").submit(function(event){
 
 
     var request = {
-        "url" : `https://clinquant-pegasus-27b4c0.netlify.app/api/users/${data.id}`,
+        "url" : `https://user-mgment-sys.herokuapp.com/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -34,7 +34,7 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `https://clinquant-pegasus-27b4c0.netlify.app/api/users/${id}`,
+            "url" : `https://user-mgment-sys.herokuapp.com/api/users/${id}`,
             "method" : "DELETE"
         }
 
