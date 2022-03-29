@@ -22,6 +22,15 @@ app.use(bodyparser.urlencoded({ extended:true}))
 app.set("view engine", "ejs")
 //app.set("views",path.resolve(__dirname, "views/ejs"))
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // controls which domain have access
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE'); //this handles incoming request
+    next();
+  });
 
 //loading assets
 app.use('/css', express.static(path.resolve(__dirname,"assets/css")))
